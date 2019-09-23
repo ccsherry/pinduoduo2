@@ -25,10 +25,8 @@ export class GridItemImageDirective implements OnInit {
   private setStyle(styleName: string, styleValue: string | number) {
     this.renderer.setStyle(this.elr.nativeElement, styleName, styleValue);
   }
-  //参数：事件名 携带的数据
-  @HostListener('click',['$event.target'])
-  handleClick(ev){
+  @HostListener('click', ['$event.target'])
+  handleClick(ev) {
     console.log(ev);
   }
 }
-
