@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeContainerComponent } from './home';
-import { HomeDetailComponent } from './home/components/home-detail';
 
 /**
  * 在功能模块中定义子路由后，只要导入该模块，等同于在根路由中直接定义
@@ -19,24 +17,7 @@ import { HomeDetailComponent } from './home/components/home-detail';
  * }]
  * ```
  */
-const routes: Routes = [{ 
-  path: 'home', 
-  // redirectTo: 'home', 
-  // pathMatch: 'full',
-  component:HomeContainerComponent,
-  children:[
-    {
-      path:'',
-      redirectTo:'hot',
-      pathMatch:'full'
-    },
-    {
-      path:':tabLink',
-      component:HomeDetailComponent
-    }
-  ]
-
-}];
+const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' }];
 
 @NgModule({
   /**
@@ -48,3 +29,4 @@ const routes: Routes = [{
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
