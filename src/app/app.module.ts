@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -7,8 +8,8 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home';
 
-import localZh from '@angular/common/locales/zh-Hans';
-import { registerLocaleData } from '@angular/common';
+import localeZh from '@angular/common/locales/zh-Hans';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,20 +18,20 @@ import { registerLocaleData } from '@angular/common';
     FormsModule,
     SharedModule,
     AppRoutingModule,
-    // 注意如果不是懒加载，一定要在根模块中导入功能模块
-    // 才能使子路由导入进来，路由也才可以成功
+    HttpClientModule,
     HomeModule
   ],
   providers: [
     {
-      provide:LOCALE_ID,
-      useValue:'zh-Hans'
+      // 系统提供的 LOCALE_ID 就是一个 InjectionToken
+      provide: LOCALE_ID,
+      useValue: 'zh-Hans'
     }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(){
-    registerLocaleData(localZh,'zh');
+  constructor() {
+    registerLocaleData(localeZh, 'zh');
   }
 }

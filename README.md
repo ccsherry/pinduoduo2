@@ -1,10 +1,12 @@
-# Pinduoduo2
+# Angular 实战拼多多
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0-beta.11.
 
-## Development server
+## HTTP 的调试工具
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 课程中的 Postman 请求的共享
+
+[帖子的请求集合](https://www.getpostman.com/collections/406a2e8e136b27ffc946)
 
 ## Code scaffolding
 

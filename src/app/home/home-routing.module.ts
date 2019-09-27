@@ -4,9 +4,9 @@ import {
   HomeContainerComponent,
   HomeDetailComponent,
   HomeGrandComponent,
+  HomeAuxComponent,
   ParentComponent
 } from './components';
-import { HomeAuxComponent } from './components/home-aux';
 
 const routes: Routes = [
   {
@@ -30,21 +30,22 @@ const routes: Routes = [
         component: HomeDetailComponent,
         children: [
           {
-            path: 'grand',
-            component: HomeGrandComponent
-          },
-          {
             path: 'aux',
             component: HomeAuxComponent,
-            outlet:'second'
+            outlet: 'second'
+          },
+          {
+            path: 'grand',
+            component: HomeGrandComponent
           }
         ]
       }
     ]
-  },{
+  },
+  {
     path: 'change-detection',
-    pathMatch:'full',
-    component:ParentComponent
+    pathMatch: 'full',
+    component: ParentComponent
   }
 ];
 
