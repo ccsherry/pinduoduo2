@@ -5,12 +5,17 @@ import {
   ScrollableTabComponent,
   ImageSliderComponent,
   HorizontalGridComponent,
-  CountDownComponent
+  CountDownComponent,
+  FooterComponent,
+  VerticalGridComponent,
+  ProductCardComponent
 } from './components';
 import {
   GridItemDirective,
   GridItemImageDirective,
-  GridItemTitleDirective
+  GridItemTitleDirective,
+  TagDirective,
+  AvatarDirective
 } from './directives';
 import { AgoPipe } from './pipes';
 
@@ -19,11 +24,16 @@ import { AgoPipe } from './pipes';
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,
+    CountDownComponent,
+    FooterComponent,
+    VerticalGridComponent,
+    ProductCardComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    AgoPipe,
-    CountDownComponent
+    TagDirective,
+    AvatarDirective,
+    AgoPipe
   ],
   imports: [CommonModule, FormsModule],
   exports: [
@@ -32,11 +42,16 @@ import { AgoPipe } from './pipes';
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,
+    CountDownComponent,
+    FooterComponent,
+    VerticalGridComponent,
+    ProductCardComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    AgoPipe,
-    CountDownComponent
+    TagDirective,
+    AvatarDirective,
+    AgoPipe
   ]
 })
 export class SharedModule {}

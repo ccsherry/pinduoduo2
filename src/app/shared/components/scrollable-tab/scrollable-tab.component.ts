@@ -25,7 +25,7 @@ export interface TopMenu {
  * 另一个是对组件涉及到哪些生命周期一目了然
  */
 export class ScrollableTabComponent {
-  selectedIndex = -1;
+  @Input() selectedTabLink: string;
   @Input() menus: TopMenu[] = [];
   @Input() backgroundColor = '#fff';
   @Input() titleActiveColor = 'yellow';
@@ -42,7 +42,6 @@ export class ScrollableTabComponent {
   }
 
   handleSelection(index: number) {
-    this.selectedIndex = index;
-    this.tabSelected.emit(this.menus[this.selectedIndex]);
+    this.tabSelected.emit(this.menus[index]);
   }
 }

@@ -1,13 +1,8 @@
-import { Injectable, NgModule } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ImageSlider, Channel, TopMenu } from 'src/app/shared/components';
+import { ImageSlider, Channel, TopMenu, Ad, Product } from 'src/app/shared';
 import { environment } from 'src/environments/environment';
 
-// 如果使用 providedIn 写法，除了 root 外，其它模块直接写都会导致循环引用
-// 所以需要额外写一个 Module，下面就是一个最简化的 module，然后可以在下面
-// service 的元数据中写 `providedIn: ServiceModuel`
-// @NgModule()
-// export class ServiceModule {}
 /**
  * 如果采用 `providedIn` ，
  * 这个形式是 Angular v6 之后引入的
@@ -21,18 +16,22 @@ import { environment } from 'src/environments/environment';
 export class HomeService {
   constructor(private http: HttpClient) {}
   getBanners() {
-    return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`, {
-      params: { icode: `${environment.icode}` }
-    });
+    return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`);
   }
   getChannels() {
-    return this.http.get<Channel[]>(`${environment.baseUrl}/channels`, {
-      params: { icode: `${environment.icode}` }
-    });
+    return this.http.get<Channel[]>(`${environment.baseUrl}/channels`);
   }
   getTabs() {
-    return this.http.get<TopMenu[]>(`${environment.baseUrl}/tabs`, {
-      params: { icode: `${environment.icode}` }
+    return this.http.get<TopMenu[]>(`${environment.baseUrl}/tabs`);
+  }
+  getAdByTab(tab: string) {
+    return this.http.get<Ad[]>(`${environment.baseUrl}/ads`, {
+      params: { categories_like: tab }
+    });
+  }
+  getProductsByTab(tab: string) {
+    return this.http.get<Product[]>(`${environment.baseUrl}/products`, {
+      params: { categories_like: tab }
     });
   }
 }
