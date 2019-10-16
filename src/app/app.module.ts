@@ -11,8 +11,10 @@ import { RecommendModule } from './recommend';
 import { MyModule } from './my';
 import { CategoryModule } from './category';
 import { ChatModule } from './chat';
+import { ProductModule } from './product';
 
 import localeZh from '@angular/common/locales/zh-Hans';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +27,8 @@ import localeZh from '@angular/common/locales/zh-Hans';
     RecommendModule,
     MyModule,
     CategoryModule,
-    ChatModule
+    ChatModule,
+    ProductModule
   ],
   providers: [
     {
