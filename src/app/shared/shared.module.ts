@@ -20,6 +20,7 @@ import {
   AvatarDirective
 } from './directives';
 import { AgoPipe } from './pipes';
+import { DialogModule } from '../dialog';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,8 @@ import { AgoPipe } from './pipes';
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
-    ProductTileComponent, 
-    BackButtonComponent,   
+    ProductTileComponent,
+    BackButtonComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
@@ -43,6 +44,7 @@ import { AgoPipe } from './pipes';
   exports: [
     CommonModule,
     FormsModule,
+    DialogModule,
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,

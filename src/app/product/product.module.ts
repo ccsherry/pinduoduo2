@@ -2,14 +2,23 @@ import { NgModule } from '@angular/core';
 
 import { ProductRoutingModule } from './product-routing.module';
 import { SharedModule } from '../shared';
-import { ProductContainerComponent, GroupItemComponent, GroupShortListComponent } from './components';
+import {
+  ProductContainerComponent,
+  GroupItemComponent,
+  GroupShortListComponent,
+  ProductVariantDialogComponent,
+  ProductAmountComponent
+} from './components';
 
 @NgModule({
   declarations: [
     ProductContainerComponent,
     GroupItemComponent,
-    GroupShortListComponent
+    GroupShortListComponent,
+    ProductVariantDialogComponent,
+    ProductAmountComponent
   ],
-  imports: [SharedModule, ProductRoutingModule]
+  imports: [SharedModule, ProductRoutingModule],
+  entryComponents: [ProductVariantDialogComponent]
 })
 export class ProductModule {}

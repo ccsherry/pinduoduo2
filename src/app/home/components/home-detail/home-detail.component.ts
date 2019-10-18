@@ -28,7 +28,7 @@ export class HomeDetailComponent implements OnInit, OnDestroy {
 
   ad$: Observable<Ad>;
 
-  products$:Observable<Product[]>;
+  products$: Observable<Product[]>;
 
   sub: Subscription;
 
@@ -49,7 +49,6 @@ export class HomeDetailComponent implements OnInit, OnDestroy {
     );
     this.products$ = this.selectedTabLink$.pipe(
       switchMap(tab => this.service.getProductsByTab(tab))
-  
     );
   }
 

@@ -1,3 +1,20 @@
-<p>
-  product-variant-dialog works!
-</p>
+<app-product-amount>
+    <div class="image-container">
+        <img [src]="selectedVariantImage" class="product-image">
+        <div class="price">
+            {{ price | currency:'CNY' }}
+            <img class="close-button" appCloseDialog src="assets/icons/close.png" />
+        </div>
+        <div class="selected-desc">已选择：{{ selectedVariantName }}</div>
+    </div>
+    <div class="content">
+        <div class="variant">
+
+            <div *ngFor="let variant of variants;let idx = index" [ngClass]="{'variant-selected': idx === selectedVariantIndex}" (click)="hadleSelection(idx)"></div>
+        </div>
+        <app-product-amount (amountChange)="handleAmountChange($event)"></app-product-amount>
+    </div>
+    <div class="buttons">
+        <button class="confirm-button" (click)="handleConfirm()" [ngClass]="{'background-color': count > 0 && selectedVariantIndex >= 0 ? 'red' : 'darkgray'}"></button>
+    </div>
+</app-product-amount>

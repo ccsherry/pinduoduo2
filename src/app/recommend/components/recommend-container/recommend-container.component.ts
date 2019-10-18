@@ -1,22 +1,21 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product, Ad } from 'src/app/shared';
+import { Ad, Product } from 'src/app/shared';
 import { HomeService } from 'src/app/home';
-import { map, filter} from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recommend-container',
   templateUrl: './recommend-container.component.html',
   styleUrls: ['./recommend-container.component.css'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecommendContainerComponent implements OnInit {
-
   ad$: Observable<Ad>;
 
-  products$:Observable<Product[]>;
-  
-  constructor(private service:HomeService) { }
+  products$: Observable<Product[]>;
+
+  constructor(private service: HomeService) {}
 
   ngOnInit() {
     this.ad$ = this.service.getAdByTab('men').pipe(
@@ -25,5 +24,4 @@ export class RecommendContainerComponent implements OnInit {
     );
     this.products$ = this.service.getProductsByTab('men');
   }
-
 }

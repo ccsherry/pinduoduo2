@@ -15,7 +15,6 @@ import { ProductModule } from './product';
 
 import localeZh from '@angular/common/locales/zh-Hans';
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [

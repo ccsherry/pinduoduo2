@@ -4,11 +4,11 @@ import { ProductContainerComponent } from './components';
 
 const routes: Routes = [
   {
-    path:'products',
-    children:[
+    path: 'products',
+    children: [
       {
-        path:':productId',
-        component:ProductContainerComponent
+        path: ':productId',
+        component: ProductContainerComponent
       }
     ]
   }

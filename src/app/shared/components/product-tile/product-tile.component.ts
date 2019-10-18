@@ -7,11 +7,8 @@ import { Product } from '../../domain';
   styleUrls: ['./product-tile.component.css']
 })
 export class ProductTileComponent implements OnInit {
+  @Input() product: Product;
+  constructor() {}
 
-  @Input() product:Product;
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

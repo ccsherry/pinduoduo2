@@ -5,25 +5,21 @@ import { Location } from '@angular/common';
   selector: 'app-back-button',
   templateUrl: './back-button.component.html',
   styleUrls: ['./back-button.component.css'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BackButtonComponent implements OnInit {
-
   float = true;
-  constructor(private location:Location) { }
+  constructor(private location: Location) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  get imageUrl() {
+    return this.float
+      ? `assets/icons/back_light.png`
+      : `assets/icons/back_dark.png`;
   }
 
-  get imageUrl(){
-    return this.float 
-    ? `assets/icons/back_light.png` 
-    : `assets/icons/back_dark.png`
-  }
-  
-
-  handleBack(){
+  handleBack() {
     this.location.back();
   }
-
 }

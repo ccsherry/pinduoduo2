@@ -5,7 +5,7 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { map, takeWhile, tap } from 'rxjs/operators';
+import { map, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-count-down',
@@ -39,7 +39,6 @@ export class CountDownComponent implements OnInit {
         minute: Math.floor((sec / 60) % 60),
         second: Math.floor(sec % 60)
       })),
-      tap(val => console.log(val)),
       map(({ hour, minute, second }) => `${hour}:${minute}:${second}`)
     );
   }
